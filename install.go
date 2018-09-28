@@ -40,7 +40,6 @@ import (
 	"github.com/openshift/api/config"
 	"github.com/openshift/api/image"
 	"github.com/openshift/api/kubecontrolplane"
-	"github.com/openshift/api/network"
 	"github.com/openshift/api/oauth"
 	"github.com/openshift/api/openshiftcontrolplane"
 	"github.com/openshift/api/operator"
@@ -66,7 +65,6 @@ var (
 		config.Install,
 		image.Install,
 		kubecontrolplane.Install,
-		network.Install,
 		oauth.Install,
 		openshiftcontrolplane.Install,
 		operator.Install,

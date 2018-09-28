@@ -17,7 +17,6 @@ import (
 	authorization "github.com/openshift/api/authorization/v1"
 	build "github.com/openshift/api/build/v1"
 	image "github.com/openshift/api/image/v1"
-	network "github.com/openshift/api/network/v1"
 	oauth "github.com/openshift/api/oauth/v1"
 	project "github.com/openshift/api/project/v1"
 	quota "github.com/openshift/api/quota/v1"
@@ -32,7 +31,6 @@ var groups = map[schema.GroupVersion]func(*runtime.Scheme) error{
 	authorization.GroupVersion: authorization.Install,
 	build.GroupVersion:         build.Install,
 	image.GroupVersion:         image.Install,
-	network.GroupVersion:       network.Install,
 	oauth.GroupVersion:         oauth.Install,
 	project.GroupVersion:       project.Install,
 	quota.GroupVersion:         quota.Install,
