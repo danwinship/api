@@ -46,7 +46,7 @@ type HTTPServingInfo struct {
 type ServingInfo struct {
 	// BindAddress is the ip:port to serve on
 	BindAddress string `json:"bindAddress"`
-	// BindNetwork is the type of network to bind to - defaults to "tcp4", accepts "tcp",
+	// BindNetwork is the type of network to bind to - defaults to "tcp", accepts "tcp",
 	// "tcp4", and "tcp6"
 	BindNetwork string `json:"bindNetwork"`
 	// CertInfo is the TLS cert info for serving secure traffic.
