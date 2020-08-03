@@ -38,7 +38,10 @@ var (
 	// TopologyManager enables ToplogyManager support. Upgrades are enabled with this feature.
 	LatencySensitive FeatureSet = "LatencySensitive"
 
-	// IPv6DualStackNoUpgrade enables dual-stack. Turning this feature set on IS NOT SUPPORTED, CANNOT BE UNDONE, and PREVENTS UPGRADES.
+	// IPv6DualStackTechPreview enables dual-stack. Turning this feature set on IS NOT SUPPORTED.
+	IPv6DualStackTechPreview FeatureSet = "IPv6DualStackTechPreview"
+
+	// deprecated alias; it will go away as soon as IPv6DualStackTechPreview has been vendored everywhere
 	IPv6DualStackNoUpgrade FeatureSet = "IPv6DualStackNoUpgrade"
 )
 
@@ -109,6 +112,11 @@ var FeatureSets = map[FeatureSet]*FeatureGateEnabledDisabled{
 	LatencySensitive: newDefaultFeatures().
 		with(
 			"TopologyManager", // sig-pod, sjenning
+		).
+		toFeatures(),
+	IPv6DualStackTechPreview: newDefaultFeatures().
+		with(
+			"IPv6DualStack", // sig-network, danwinship
 		).
 		toFeatures(),
 	IPv6DualStackNoUpgrade: newDefaultFeatures().
